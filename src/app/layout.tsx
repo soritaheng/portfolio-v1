@@ -17,13 +17,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ibm_plex_mono.className} flex m-8`}>
-        <header className={`${inter.className} flex flex-col gap-4 font-semibold text-4xl`}>
+      <body className={`${ibm_plex_mono.className} flex flex-col gap-4 md:flex-row m-8`}>
+        <header className={`${inter.className} flex md:flex-col gap-6 md:gap-4 font-semibold md:text-4xl text-xl justify-center md:justify-normal`}>
           {pages.map((page) => (
             <Link className="hover:underline-offset-8 hover:underline" key={page.name} href={page.path}>{page.name}</Link>
           ))}
         </header>
-        {children}
+        <main className="w-full">
+          <div className="w-fit md:w-[60vw] mx-auto">
+            {children}
+          </div>
+        </main>
         </body>
     </html>
   );
