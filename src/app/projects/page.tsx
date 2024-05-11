@@ -40,7 +40,7 @@ export default function Projects() {
     return(
         <div className="w-full space-y-12">
             {Object.keys(projects).map((key) => (
-                <div className="space-y-4">
+                <div key={key} className="space-y-4">
                     <h2 className="font-bold text-3xl mb-6">{key}</h2>
                     {projects[key].map(({name, url, role, description, duration}) => (
                         <Project key={key} name={name} url={url} role={role} duration={duration} description={description}></Project>
