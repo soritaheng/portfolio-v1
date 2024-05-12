@@ -38,10 +38,10 @@ const projects: {[key: string]: ProjectType[]} = {
 
 export default function Projects() {
     return(
-        <div className="w-full space-y-8 md:space-y-12">
+        <div className="w-full space-y-8 md:space-y-10">
             {Object.keys(projects).map((key) => (
                 <div key={key} className="space-y-4">
-                    <h2 className="font-bold text-xl md:text-3xl md:mb-6">{key}</h2>
+                    <h2 className="font-bold text-xl md:text-3xl md:mb-4">{key}</h2>
                     {projects[key].map(({name, url, role, description, duration}) => (
                         <Project key={key} name={name} url={url} role={role} duration={duration} description={description}></Project>
                     ))}
